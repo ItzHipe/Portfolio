@@ -1,0 +1,89 @@
+/**
+ * Design tokens — single source of truth for theme values.
+ * Consumed by Tailwind (via CSS variables) and available globally.
+ */
+
+:root {
+  /* Backgrounds */
+  --color-void: 248 250 252;
+  --color-elevated: 255 255 255;
+  --color-surface: 241 245 249;
+
+  /* Foreground */
+  --color-foreground: 15 15 15;
+  --color-muted: 71 85 105;
+  --color-subtle: 100 116 139;
+
+  /* Borders & glass */
+  --color-border: 15 23 42;
+  --color-border-glow: 45 212 191;
+  --glass-bg: 255 255 255;
+  --glass-opacity: 0.55;
+
+  /* Accents — teal / cyan / purple / violet */
+  --color-primary: 182 62 150;
+  --color-primary-light: 216 112 195;
+  --color-accent: 88 230 217;
+  --color-teal: 20 184 166;
+  --color-cyan: 34 211 238;
+  --color-purple: 168 85 247;
+  --color-violet: 139 92 246;
+
+  /* Glow intensities — restrained for premium feel */
+  --glow-teal: 45 212 191;
+  --glow-purple: 168 85 247;
+  --glow-violet: 139 92 246;
+  --glow-opacity: 0.22;
+
+  /* Typography scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+
+  /* Spacing rhythm */
+  --space-section-y: 4.5rem;
+  --space-section-y-md: 5.5rem;
+  --space-section-y-lg: 6.5rem;
+  --space-section-sm: 3rem;
+  --space-section-sm-md: 4rem;
+  --space-container-x: 1rem;
+  --space-grid: 1.5rem;
+  --space-grid-md: 1.75rem;
+  --space-card: 1.25rem;
+  --space-card-md: 1.5rem;
+
+  /* Radius */
+  --radius-card: 1rem;
+  --radius-card-lg: 1.25rem;
+
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 140ms;
+  --duration-base: 260ms;
+  --duration-slow: 480ms;
+
+}
+
+.dark {
+  --color-void: 5 5 5;
+  --color-elevated: 15 15 15;
+  --color-surface: 18 18 18;
+
+  --color-foreground: 245 245 245;
+  --color-muted: 163 163 163;
+  --color-subtle: 115 115 115;
+
+  --color-border: 255 255 255;
+  --color-border-glow: 88 230 217;
+  --glass-bg: 255 255 255;
+  --glass-opacity: 0.045;
+  --glow-opacity: 0.18;
+
+}

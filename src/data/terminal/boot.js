@@ -1,0 +1,55 @@
+export const terminalBootCommands = [
+  {
+    id: 'boot',
+    type: 'system',
+    prefix: '>',
+    text: 'booting developer console...',
+    typingSpeed: 18,
+    delayAfter: 280,
+  },
+  {
+    id: 'ai',
+    type: 'system',
+    prefix: '>',
+    text: 'loading AI modules...',
+    delayBefore: 80,
+    typingSpeed: 26,
+    delayAfter: 320,
+  },
+  {
+    id: 'workspace',
+    type: 'system',
+    prefix: '>',
+    text: 'initializing engineering workspace...',
+    delayBefore: 80,
+    typingSpeed: 26,
+    delayAfter: 300,
+  },
+  {
+    id: 'projects',
+    type: 'system',
+    prefix: '>',
+    text: 'loading project systems...',
+    delayBefore: 60,
+    typingSpeed: 24,
+    delayAfter: 280,
+  },
+  {
+    id: 'ready',
+    type: 'success',
+    prefix: '✔',
+    text: 'portfolio ready',
+    delayBefore: 120,
+    typingSpeed: 22,
+    delayAfter: 400,
+  },
+]
+
+export const terminalBanner = {
+  id: 'banner',
+  instant: true,
+  type: 'banner',
+  prefix: '',
+  text: 'JAY PATIL — FULL STACK / AI / IoT',
+  delayAfter: 420,
+}
