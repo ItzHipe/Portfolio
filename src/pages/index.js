@@ -67,8 +67,8 @@ export default function HomePage() {
       <Layout>
         <Hero />
         <AboutSection />
-        <ExperienceSection />
         <ProjectsSection />
+        <ExperienceSection />
         <AchievementsSection />
         <SkillsSection />
         <TerminalSection />
