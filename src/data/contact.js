@@ -1,6 +1,6 @@
 export const contactContent = {
   title: 'Open to conversations',
   subtitle:
-    'Internships, junior frontend roles, and project collaborations. Based in Pune — comfortable with remote work.',
-  email: 'hello@jaypatil.dev',
+    'Open to internships, frontend engineering roles, and product-focused collaborations across web, AI, and IoT projects. Based in Pune and comfortable with remote work.',
+  email: 'hipe.dev@gmail.com',
 }

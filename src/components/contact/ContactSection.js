@@ -12,10 +12,10 @@ export default function ContactSection() {
       aria-labelledby="contact-heading"
     >
       <div className="section-container">
-        <FadeIn className="card-premium relative mx-auto max-w-3xl overflow-hidden p-8 text-center sm:p-10 md:p-12">
+        <FadeIn className="card-premium relative mx-auto max-w-2xl overflow-hidden p-8 text-center sm:p-10 md:p-12">
           <div
             aria-hidden
-            className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-accent-cyan/10 blur-[80px]"
+            className="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full bg-accent-cyan/10 blur-[80px]"
           />
 
           <p className="eyebrow mb-3">Contact</p>
@@ -30,18 +30,22 @@ export default function ContactSection() {
           </p>
 
           <FadeIn delay={0.08} className="mt-8">
-            <Button href={`mailto:${contactContent.email}`} size="lg" className="btn-tactile">
+            <Button
+             href={`mailto:${contactContent.email}`}
+             size="md"
+            className="btn-tactile font-mono tracking-wide"
+            >
               {contactContent.email}
             </Button>
           </FadeIn>
 
-          <FadeIn delay={0.14} className="mt-10">
+          <FadeIn delay={0.14} className="mt-8">
             <p className="mb-4 text-sm text-subtle">Elsewhere</p>
             <SocialLinks className="justify-center" />
           </FadeIn>
 
           <p className="mt-10 font-mono text-[11px] text-subtle">
-            {siteConfig.name} · {new Date().getFullYear()}
+            Designed and developed by {siteConfig.name}.
           </p>
         </FadeIn>
       </div>
