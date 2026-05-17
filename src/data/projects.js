@@ -10,8 +10,9 @@ export const flagshipProject = {
   title: 'FarmLens',
   category: 'AI · Computer Vision · AgriTech',
   description:
-    'AI-assisted crop disease detection: farmers upload leaf images, a vision model returns a diagnosis with confidence, and results are stored through a FastAPI backend for Flutter and web clients.',
-  architecture:
+    'AI-powered crop disease detection platform where farmers upload leaf images and receive real-time diagnoses with confidence scoring through a FastAPI inference pipeline.',
+    image: null,
+    architecture:
     'Flutter/mobile and web clients → FastAPI inference service → SQL records for predictions. Image preprocessing and model inference run server-side with structured response payloads.',
   challenges: [
     'Balancing model accuracy with inference time on consumer hardware',
@@ -45,7 +46,8 @@ export const projects = [
     category: 'IoT · Smart Farming',
     description:
       'IoT monitoring stack on Raspberry Pi: environmental sensors feed real-time data, alerts fire on thresholds, and disease signals tie into recommendation logic. Winner at PCU Ideathon 2.0 (2025).',
-    highlights: [
+    image: '/images/projects/cropsense-dashboard.webp',
+      highlights: [
       'Sensor integration for soil and environmental readings',
       'Real-time monitoring with alert rules',
       'Disease detection hooks and recommendation concepts',
@@ -66,7 +68,8 @@ export const projects = [
     category: 'Frontend · Interaction Design',
     description:
       'This site: interactive terminal, cinematic motion system, glass UI, and responsive React architecture tuned for performance on mid-range devices.',
-    highlights: [
+    image: '/images/projects/portfolio-home.webp',
+      highlights: [
       'Command-driven terminal with rich outputs',
       'Design tokens and accessible dark-first UI',
     ],

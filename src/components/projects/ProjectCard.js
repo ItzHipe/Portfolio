@@ -17,6 +17,7 @@ export default function ProjectCard({
   size = 'default',
   links,
   thumbnail,
+  image,
 }) {
   const { ref, style, handlers, canTilt } = useCardTilt(true)
 
@@ -36,7 +37,11 @@ export default function ProjectCard({
 
       <div className="card-inner relative flex h-full flex-col overflow-hidden bg-void/55">
         {thumbnail && (
-          <ProjectThumbnail gradient={thumbnail.gradient} label={thumbnail.label} />
+          <ProjectThumbnail
+            gradient={thumbnail.gradient}
+            label={thumbnail.label}
+            image={image}
+          />
         )}
 
         <div className="flex flex-1 flex-col card-pad">

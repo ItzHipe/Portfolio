@@ -5,20 +5,19 @@ import { StaggerContainer, StaggerItem } from '@/components/animations/StaggerCh
 function TimelineCard({ role, company, period, location, description }) {
   return (
     <article className="card-premium card-pad relative">
-      <div className="absolute -left-px top-8 hidden h-[calc(100%-4rem)] w-px bg-gradient-to-b from-primary to-accent lg:block" />
       <header className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
         <div>
           <h3 className="font-display text-lg font-semibold md:text-xl">
             {role}{' '}
-            <span className="text-primary">@ {company}</span>
+            <span className="text-accent-cyan/85">@ {company}</span>
           </h3>
-          <p className="font-mono text-sm text-muted">
+          <p className="font-mono text-xs uppercase tracking-wide text-subtle sm:text-sm">
             {period} · {location}
           </p>
         </div>
       </header>
       <p className="prose-muted text-sm md:text-base">
-        {description}
+        {description} 
       </p>
     </article>
   )
@@ -46,7 +45,7 @@ export default function ExperienceSection() {
           ))}
         </StaggerContainer>
 
-        <div className="mt-20">
+        <div className="mt-16">
           <SectionHeading
             title={educationContent.title}
             align="left"
@@ -55,11 +54,11 @@ export default function ExperienceSection() {
           <StaggerContainer className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {educationContent.items.map((item) => (
               <StaggerItem key={item.id}>
-                <article className="card-premium card-pad h-full">
+                <article className="card-premium card-pad h-full transition-transform duration-300 hover:-translate-y-1">
                   <h3 className="font-display text-lg font-semibold">
                     {item.degree}
                   </h3>
-                  <p className="mt-1 font-mono text-sm text-accent">
+                  <p className="mt-1 font-mono text-sm text-accent-cyan/80">
                     {item.period}
                   </p>
                   <p className="mt-2 text-sm font-medium">{item.institution}</p>
