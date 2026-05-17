@@ -6,9 +6,9 @@ export const siteConfig = {
     'Frontend engineer from Pune building AI crop analysis, IoT farming systems, and modern React products. B.Tech CSE @ PCU. Open to internships and junior roles.',
   ogDescription:
     'Portfolio of Jay Patil — FarmLens, CropSense, interactive React engineering, and full-stack AI/IoT work.',
-  url: 'https://jaypatil.dev',
+  url: 'https://hipe.dev',
   author: 'Jay Patil',
-  email: 'hello@jaypatil.dev',
+  email: 'hipe.dev@gmail.com',
   location: 'Pune, Maharashtra',
   locale: 'en_IN',
   keywords:
@@ -31,12 +31,12 @@ export const navLinksExtended = [
 export const socialLinks = [
   {
     name: 'GitHub',
-    href: 'https://github.com',
+    href: 'https://github.com/ItzHipe',
     icon: 'github',
   },
   {
     name: 'LinkedIn',
-    href: 'https://linkedin.com',
+    href: 'https://linkedin.com/in/jay-patil-562046285/',
     icon: 'linkedin',
   },
 ]
