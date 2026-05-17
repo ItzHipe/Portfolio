@@ -1,5 +1,6 @@
 import { FadeInHero } from '@/components/animations/FadeIn'
-import HeroCTA from '@/components/home/hero/HeroCTA'
+import HeroCTA from './HeroCTA'
+import RoleRotator from './RoleRotator'
 
 export default function HeroIntro({ content }) {
   return (
@@ -7,7 +8,7 @@ export default function HeroIntro({ content }) {
       <FadeInHero delay={0}>
         <p className="eyebrow mb-3">{content.name}</p>
         <p className="font-mono text-xs text-muted sm:text-sm">
-          {content.roles.join(' · ')}
+          <RoleRotator roles={content.roles} />
         </p>
         <h1
           id="hero-heading"

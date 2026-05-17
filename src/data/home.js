@@ -1,8 +1,12 @@
 export const heroContent = {
   name: 'Jay Patil',
-  roles: ['Frontend Engineer', 'AI Systems Builder', 'IoT Developer'],
-  headline: 'Modern systems where interfaces, AI, and hardware meet.',
-  bio: 'Based in Pune. I build responsive web products, crop-disease vision pipelines, and IoT monitoring — with an emphasis on clear UX and shippable engineering.',
+  roles: [
+  'Modern Web Developer',
+  'Full Stack Engineer',
+  'Freelancer'
+  ],
+  headline: 'Creating performant products for modern businesses.',
+  bio: 'Clean design, responsive interfaces, and smart systems for modern products. Open to internships and junior roles. Based in Pune — comfortable with remote work.',
   profileImage: '/images/profile/developer-pic-1.png',
   profileFallback: 'JP',
   ctas: [
@@ -21,7 +25,7 @@ export const heroContent = {
     },
     {
       id: 'contact',
-      label: 'Contact',
+      label: 'Contact Me',
       href: '#contact',
       variant: 'contact',
     },
