@@ -74,7 +74,15 @@ export default function Navbar() {
           </a>
         </div>
 
-        <div className="flex shrink-0 items-center justify-end gap-2 lg:col-start-3">
+        <div className="flex shrink-0 items-center justify-end gap-3 lg:col-start-3">
+          <a 
+            href="https://hipe.dev/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:inline-flex items-center rounded-full border border-border/60 bg-white/5 px-4 py-2 text-sm font-medium text-foreground transition-all duration-300 hover:border-primary/40 hover:bg-white/10 hover:text-white"
+            >
+            Resume
+            </a>
           <ul className="hidden items-center gap-1 sm:flex">
             {socialLinks.map(({ name, href, icon }) => {
               const Icon = iconMap[icon]
