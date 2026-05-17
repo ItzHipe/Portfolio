@@ -321,6 +321,41 @@
   .terminal-scroll {
     scroll-behavior: smooth;
     overscroll-behavior: contain;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  /* ─── Custom Scrollbar ─────────────────────────────────────── */
+  /* WebKit browsers */
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  *::-webkit-scrollbar-track {
+    background: rgb(var(--color-void));
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: rgb(var(--color-primary));
+    border-radius: 4px;
+    border: 2px solid rgb(var(--color-void));
+  }
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(var(--color-primary)) rgb(var(--color-void));
+  }
+  /* Reduce heavy transitions for smoother UI */
+  .glass, .glass-strong, .glass-card, .glass-card-hover {
+    transition: background-color 0.2s ease-out, backdrop-filter 0.2s ease-out;
+  }
+  .btn-primary {
+    transition: background 0.2s ease-out, transform 0.2s ease-out;
+  }
+  .theme-toggle {
+    will-change: transform, opacity;
+  }
+
+  .terminal-scroll::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
   }
 
   .terminal-rich-card {

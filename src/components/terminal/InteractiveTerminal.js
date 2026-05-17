@@ -19,7 +19,7 @@ function InteractiveTerminal() {
 
   const handleBootComplete = useCallback(() => {
     setBootComplete(true)
-    requestAnimationFrame(() => terminal.inputRef.current?.focus())
+    requestAnimationFrame(() => terminal.inputRef.current?.focus({ preventScroll: true }))
   }, [terminal.inputRef])
 
   return (

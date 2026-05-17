@@ -64,14 +64,7 @@ export default function Navbar() {
         </nav>
 
         <div className="flex flex-1 justify-center lg:col-start-2 lg:flex-none">
-          <a
-            href="#home"
-            onClick={handleLogoClick}
-            className="focus-ring touch-target flex h-10 w-10 items-center justify-center rounded-full border border-foreground/80 font-display text-sm font-semibold tracking-tight text-foreground transition-[border-color,opacity] duration-200 hover:border-foreground md:h-11 md:w-11"
-            aria-label={`${siteConfig.name} — home`}
-          >
-            {siteConfig.initials}
-          </a>
+          {/* Removed JP icon as requested */}
         </div>
 
         <div className="flex shrink-0 items-center justify-end gap-3 lg:col-start-3">

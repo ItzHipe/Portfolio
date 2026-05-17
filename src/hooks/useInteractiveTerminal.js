@@ -3,7 +3,7 @@ import { applyAutocomplete, getSuggestions } from '@/lib/terminal/autocomplete'
 import { executeCommand, EXECUTION_DELAY_MS } from '@/lib/terminal/executeCommand'
 import { inputEntry, lineEntry } from '@/lib/terminal/entries'
 
-const MAX_ENTRIES = 48
+const MAX_ENTRIES = 30
 
 /**
  * Interactive terminal state — boot handled separately.
