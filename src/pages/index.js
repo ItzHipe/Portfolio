@@ -25,16 +25,6 @@ const ProjectsSection = dynamic(
   { loading: () => <SectionPlaceholder /> }
 )
 
-const BuildingSection = dynamic(
-  () => import('@/components/about/BuildingSection'),
-  { loading: () => <SectionPlaceholder /> }
-)
-
-const PhilosophySection = dynamic(
-  () => import('@/components/about/PhilosophySection'),
-  { loading: () => <SectionPlaceholder /> }
-)
-
 const SkillsSection = dynamic(
   () => import('@/components/skills/SkillsSection'),
   { loading: () => <SectionPlaceholder /> }

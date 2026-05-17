@@ -17,7 +17,7 @@ export default function RoleRotator({ roles }) {
 
   return (
     <div
-      className="relative mt-2 h-[1.35em] overflow-hidden font-display text-2xl font-bold sm:text-3xl md:text-4xl"
+      className="relative mt-2 h-[1.35em] overflow-hidden font-display text-lg font-medium sm:text-xl md:text-2xl"
       aria-live="polite"
       aria-atomic="true"
     >
@@ -25,7 +25,7 @@ export default function RoleRotator({ roles }) {
       <AnimatePresence mode="wait" initial={false}>
         <motion.span
           key={role}
-          className="absolute inset-x-0 block bg-gradient-to-r from-accent-cyan via-accent-teal to-accent-purple bg-clip-text text-transparent"
+          className="absolute inset-x-0 block text-accent-cyan/90"
           initial={{ y: 28, opacity: 0, filter: 'blur(6px)' }}
           animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
           exit={{ y: -28, opacity: 0, filter: 'blur(6px)' }}

@@ -41,9 +41,9 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        'fixed inset-x-0 top-0 z-50 h-16 border-b transition-[border-color,background-color] duration-300 ease-out md:h-[4.5rem]',
+        'fixed inset-x-0 top-0 z-50 h-14 border-b transition-[border-color,background-color] duration-300 ease-out md:h-16',
         scrolled
-          ? 'border-border/12 bg-void/90 backdrop-blur-md'
+          ? 'bg-void/75 backdrop-blur-xl'
           : 'border-transparent bg-void/70 backdrop-blur-sm'
       )}
     >
