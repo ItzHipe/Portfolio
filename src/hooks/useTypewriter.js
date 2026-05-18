@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 
-const CHUNK = 2
+const CHUNK = 1
 
 /**
  * Batched typewriter — fewer React updates than per-character.
  */
-export function useTypewriter(text, { enabled = true, speed = 24, onComplete } = {}) {
+export function useTypewriter(text, { enabled = true, speed = 16, onComplete } = {}) {
   const [displayed, setDisplayed] = useState('')
   const [isComplete, setIsComplete] = useState(false)
   const onCompleteRef = useRef(onComplete)

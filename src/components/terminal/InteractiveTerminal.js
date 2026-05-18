@@ -1,4 +1,4 @@
-import { useState, useCallback, memo } from 'react'
+import { useState, useCallback, memo, useRef } from 'react'
 import { useTheme } from '@/context/ThemeContext'
 import { useInteractiveTerminal } from '@/hooks/useInteractiveTerminal'
 import { terminalBootCommands, terminalBanner, terminalConfig } from '@/data/terminal'
@@ -10,11 +10,19 @@ import { cn } from '@/lib/cn'
 function InteractiveTerminal() {
   const [bootComplete, setBootComplete] = useState(false)
   const { theme, toggleTheme } = useTheme()
+  const themeRef = useRef(theme)
+  
+  // Sync ref
+  if (themeRef.current !== theme) {
+    themeRef.current = theme
+  }
+
+  const getTheme = useCallback(() => themeRef.current, [])
 
   const terminal = useInteractiveTerminal({
     bootComplete,
     onThemeToggle: toggleTheme,
-    getTheme: () => theme,
+    getTheme,
   })
 
   const handleBootComplete = useCallback(() => {
@@ -25,25 +33,19 @@ function InteractiveTerminal() {
   return (
     <div
       className={cn(
-        'terminal-shell terminal-scanlines relative flex flex-col overflow-hidden',
-        'min-h-[min(68vh,560px)] max-h-[min(82vh,680px)] sm:min-h-[500px]'
+        'terminal-shell terminal-scanlines relative flex flex-col overflow-hidden rounded-xl border border-border/10 bg-void/80 backdrop-blur-sm shadow-glass',
+        'min-h-[min(50vh,420px)] max-h-[min(70vh,560px)] sm:min-h-[380px]'
       )}
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-gradient-to-br from-accent-cyan/[0.03] via-transparent to-accent-purple/[0.02]"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/[0.01] via-transparent to-accent-cyan/[0.015]"
       />
 
-      <div className="shrink-0 border-b border-border/8 px-4 py-3 sm:px-5">
-        <p className="font-mono text-[11px] leading-relaxed text-muted/80 sm:text-xs">
-          <span className="text-accent-teal">●</span>{' '}
-          <span className="text-accent-cyan/80">{terminalConfig.hostname}</span>
-          <span className="text-muted/45"> · {terminalConfig.version}</span>
-          {bootComplete ? (
-            <span className="text-accent-teal/75"> · interactive</span>
-          ) : (
-            <span className="text-muted/50"> · booting</span>
-          )}
+      <div className="shrink-0 border-b border-border/5 px-4 py-3 sm:px-6 sm:py-4">
+        <p className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-wider text-muted/60 sm:text-[11px]">
+          <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent-cyan/70 shadow-[0_0_8px_rgba(34,211,238,0.5)]"></span>
+          Terminal
         </p>
       </div>
 

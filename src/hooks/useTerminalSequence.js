@@ -17,7 +17,7 @@ export function useTerminalSequence(commands, { active = false } = {}) {
 
   const { displayed, isComplete } = useTypewriter(current?.text ?? '', {
     enabled: isRunning && lineReady && current && !current.instant,
-    speed: current?.typingSpeed ?? 28,
+    speed: current?.typingSpeed ?? 16,
   })
 
   useEffect(() => {

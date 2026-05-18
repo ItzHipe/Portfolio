@@ -1,7 +1,8 @@
 import { parseInput } from '@/lib/terminal/parseInput'
 import { lineEntry, richEntry } from '@/lib/terminal/entries'
-import { matchAiQuery } from '@/data/terminal/aiPatterns'
 import { terminalProjects } from '@/data/terminal/projects'
+import { socialLinks } from '@/data/site'
+import { TERMINAL_COMMANDS } from '@/data/terminal/config'
 import {
   whoamiContent,
   aboutContent,
@@ -12,33 +13,9 @@ import {
   achievements,
   contactInfo,
 } from '@/data/terminal/content'
-import { TERMINAL_COMMANDS } from '@/data/terminal/config'
-import { socialLinks } from '@/data/site'
 
-const HELP_GROUPS = [
-  {
-    title: 'Profile',
-    cmds: ['whoami', 'about', 'skills', 'stack', 'experience', 'achievements'],
-  },
-  {
-    title: 'Projects',
-    cmds: ['projects', 'project farmlens', 'project cropsense', 'project experiments'],
-  },
-  {
-    title: 'Actions',
-    cmds: ['contact', 'resume', 'github', 'linkedin', 'theme', 'clear'],
-  },
-  {
-    title: 'AI',
-    cmds: ['ask "tell me about FarmLens"'],
-  },
-]
+export { TERMINAL_COMMANDS }
 
-/**
- * @param {string} raw
- * @param {{ getTheme?: () => string }} ctx
- * @returns {{ entries: object[], sideEffects?: { themeToggle?: boolean, clear?: boolean } }}
- */
 export function executeCommand(raw, ctx = {}) {
   const { command, args } = parseInput(raw)
 
@@ -46,82 +23,53 @@ export function executeCommand(raw, ctx = {}) {
     return { entries: [] }
   }
 
+  const blank = lineEntry({ text: '', lineType: 'output', prefix: '' })
+
   switch (command) {
     case 'help':
       return {
         entries: [
-          lineEntry({ text: 'Available commands — type to explore:', lineType: 'system' }),
-          richEntry('help', { groups: HELP_GROUPS, all: TERMINAL_COMMANDS }),
+          blank,
+          lineEntry({
+            text: `→ Available commands: ${TERMINAL_COMMANDS.join(', ')}`,
+            lineType: 'output',
+            prefix: '',
+          }),
+          blank,
         ],
       }
 
     case 'whoami':
-      return { entries: [richEntry('whoami', whoamiContent)] }
+      return {
+        entries: [blank, richEntry('whoami', whoamiContent), blank],
+      }
 
     case 'about':
-      return { entries: [richEntry('about', aboutContent)] }
-
-    case 'skills':
-      return { entries: [richEntry('skills', { groups: skillsGroups })] }
-
-    case 'stack':
-      return { entries: [richEntry('table', { title: 'Technology stack', rows: stackRows })] }
+      return {
+        entries: [blank, richEntry('about', aboutContent), blank],
+      }
 
     case 'projects':
       return {
-        entries: [
-          lineEntry({ text: `${projectsList.length} systems loaded:`, lineType: 'system' }),
-          richEntry('projects', { items: projectsList }),
-        ],
+        entries: [blank, richEntry('projects', { items: projectsList }), blank],
       }
-
-    case 'project': {
-      const slug = args[0]?.toLowerCase()
-      if (!slug) {
-        return {
-          entries: [
-            lineEntry({
-              text: 'Usage: project <name> — e.g. project farmlens',
-              lineType: 'error',
-            }),
-          ],
-        }
-      }
-      const project = terminalProjects[slug]
-      if (!project) {
-        return {
-          entries: [
-            lineEntry({
-              text: `Unknown project "${slug}". Try: ${Object.keys(terminalProjects).join(', ')}`,
-              lineType: 'error',
-            }),
-          ],
-        }
-      }
-      return { entries: [richEntry('project', project)] }
-    }
-
-    case 'experience':
-      return { entries: [richEntry('experience', { items: experienceTimeline })] }
-
-    case 'achievements':
-      return { entries: [richEntry('achievements', { items: achievements })] }
 
     case 'contact':
-      return { entries: [richEntry('contact', contactInfo)] }
+      return {
+        entries: [blank, richEntry('contact', contactInfo), blank],
+      }
 
     case 'resume':
       return {
         entries: [
-          lineEntry({
-            text: 'Opening resume.pdf — download started.',
-            lineType: 'success',
-          }),
+          blank,
+          lineEntry({ text: '→ Opening resume...', lineType: 'success', prefix: '' }),
           richEntry('link', {
-            label: 'Download Resume',
+            label: 'Download / View Resume',
             href: '/resume.pdf',
             external: false,
           }),
+          blank,
         ],
       }
 
@@ -129,24 +77,28 @@ export function executeCommand(raw, ctx = {}) {
       const gh = socialLinks.find((s) => s.icon === 'github')
       return {
         entries: [
+          blank,
           richEntry('link', {
-            label: 'GitHub Profile',
-            href: gh?.href ?? 'https://github.com',
+            label: '→ Open GitHub Profile',
+            href: gh?.href || 'https://github.com/ItzHipe',
             external: true,
           }),
+          blank,
         ],
       }
     }
 
     case 'linkedin': {
-      const li = socialLinks.find((s) => s.icon === 'linkedin')
+      const li = socialLinks.find((s) => s.icon === 'linkedin') || socialLinks.find((s) => s.name.toLowerCase() === 'linkedin')
       return {
         entries: [
+          blank,
           richEntry('link', {
-            label: 'LinkedIn Profile',
-            href: li?.href ?? 'https://linkedin.com',
+            label: '→ Open LinkedIn Profile',
+            href: li?.href || 'https://linkedin.com',
             external: true,
           }),
+          blank,
         ],
       }
     }
@@ -154,56 +106,20 @@ export function executeCommand(raw, ctx = {}) {
     case 'clear':
       return { entries: [], sideEffects: { clear: true } }
 
-    case 'theme': {
-      const theme = ctx.getTheme?.() ?? 'dark'
-      return {
-        entries: [
-          lineEntry({
-            text: `Toggling theme (${theme} → ${theme === 'dark' ? 'light' : 'dark'})...`,
-            lineType: 'system',
-          }),
-        ],
-        sideEffects: { themeToggle: true },
-      }
-    }
-
-    case 'ask': {
-      const query = args.join(' ')
-      const match = matchAiQuery(query)
-      if (!match) {
-        return {
-          entries: [
-            lineEntry({
-              text: 'Usage: ask "your question"',
-              lineType: 'error',
-            }),
-          ],
-        }
-      }
-      const entries = [
-        lineEntry({ text: 'AI › processing query...', lineType: 'system', prefix: '◆' }),
-        lineEntry({ text: match.answer, lineType: 'output' }),
-      ]
-      if (match.rich?.type === 'project-hint' && match.rich.projectId) {
-        const project = terminalProjects[match.rich.projectId]
-        if (project) entries.push(richEntry('project', project))
-      }
-      if (match.rich?.type === 'skills-hint') {
-        entries.push(richEntry('skills', { groups: skillsGroups }))
-      }
-      return { entries }
-    }
-
     default:
       return {
         entries: [
+          blank,
           lineEntry({
-            text: `Command not found: ${command}. Type 'help' for available commands.`,
+            text: `→ Command not found. Type 'help' to see available commands.`,
             lineType: 'error',
+            prefix: '',
           }),
+          blank,
         ],
       }
   }
 }
 
-export const EXECUTION_DELAY_MS = 90
+export const EXECUTION_DELAY_MS = 60
+

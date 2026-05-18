@@ -1,14 +1,12 @@
 export const aboutContent = {
   tagline: 'Engineering profile',
-  intro:
-    'I’m a CSE student at Pimpri Chinchwad University (CGPA 8.15, class of 2027) who ships across the stack — from React interfaces to Python APIs and Raspberry Pi prototypes.',
+  intro: "I\'m a full-stack developer focused on building fast, polished web products. I work with React, Next.js, and modern backend APIs to ship products that look great and work reliably.",
   paragraphs: [
-    'Most of my work sits where product thinking meets technical depth: FarmLens for AI-assisted crop disease detection, CropSense for IoT field monitoring, and frontends that stay fast on real devices.',
-    'I care about readable code, responsive layouts, and demos that explain the system — not just screenshots. I’m looking for roles where I can grow as a frontend engineer while contributing to AI and IoT features.',
+    "I\'ve shipped a freelance frontend for Raftaar, built an AI crop-disease platform (FarmLens), and won a university innovation competition with an IoT farming system. I\'m based in Pune and available for remote work.",
   ],
   stats: [
-    { label: 'CGPA', value: '8.15' },
-    { label: 'Graduation', value: '2027' },
-    { label: 'Focus', value: 'AI · IoT · UI' },
+    { label: 'Projects Shipped', value: '4+' },
+    { label: 'Freelance Clients', value: '1' },
+    { label: 'Available', value: 'Remote' },
   ],
 }

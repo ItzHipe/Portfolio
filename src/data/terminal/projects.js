@@ -17,7 +17,7 @@ export const terminalProjects = {
     ],
     aiNote:
       'Architecture: mobile/web → FastAPI inference → SQL prediction history. Focus on practical field use, not demo-only accuracy claims.',
-    links: { github: 'https://github.com', demo: null },
+    links: { github: null, demo: null },
   },
   cropsense: {
     id: 'cropsense',
@@ -33,21 +33,22 @@ export const terminalProjects = {
       { label: 'Data', value: 'Real-time streams' },
       { label: 'Award', value: 'Ideathon 2.0' },
     ],
-    links: { github: 'https://github.com', demo: null },
+    links: { github: 'https://github.com/ItzHipe/CropSense', demo: null },
   },
-  experiments: {
-    id: 'experiments',
-    name: 'Automation & AI Experiments',
-    tagline: 'Prototypes and tooling',
-    category: 'Scripts · APIs · UI spikes',
-    status: 'Ongoing',
+  raftaar: {
+    id: 'raftaar',
+    name: 'Raftaar',
+    tagline: 'Company website frontend',
+    category: 'Frontend · React · JavaScript',
+    status: 'Completed',
     description:
-      'Smaller automation scripts, ML trials, and frontend experiments that feed into FarmLens and CropSense.',
-    stack: ['Python', 'JavaScript', 'Docker', 'Git'],
+      'Built and refined the company website in React. Implemented responsive layouts and improved site behavior on desktop and mobile.',
+    stack: ['React', 'JavaScript', 'Tailwind CSS'],
     metrics: [
-      { label: 'Focus', value: 'Rapid iteration' },
+      { label: 'Role', value: 'Freelance Frontend' },
+      { label: 'Focus', value: 'Responsive UI' },
     ],
-    links: { github: 'https://github.com', demo: null },
+    links: { github: 'https://github.com/ItzHipe/Raftaar', demo: 'https://raftaar.win' },
   },
   portfolio: {
     id: 'portfolio',
@@ -62,6 +63,6 @@ export const terminalProjects = {
       { label: 'Terminal', value: 'Full command shell' },
       { label: 'Perf', value: 'Lazy sections' },
     ],
-    links: { github: 'https://github.com', demo: null },
+    links: { github: 'https://github.com/ItzHipe/Portfolio', demo: null },
   },
 }

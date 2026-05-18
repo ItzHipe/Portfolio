@@ -93,15 +93,15 @@ module.exports = {
         grid: '48px 48px',
       },
       boxShadow: {
-        glass: '0 8px 32px rgba(0, 0, 0, 0.35)',
-        'glass-sm': '0 4px 16px rgba(0, 0, 0, 0.2)',
-        glow: '0 0 24px rgb(var(--glow-teal) / 0.35), 0 0 48px rgb(var(--glow-purple) / 0.15)',
-        'glow-sm': '0 0 16px rgb(var(--glow-teal) / 0.25)',
-        'glow-lg': '0 0 40px rgb(var(--glow-purple) / 0.25), 0 0 80px rgb(var(--glow-teal) / 0.12)',
-        'glow-violet': '0 0 32px rgb(var(--glow-violet) / 0.4)',
-        neon: '0 0 5px rgb(var(--glow-teal) / 0.5), 0 0 20px rgb(var(--glow-teal) / 0.3), inset 0 0 12px rgb(var(--glow-teal) / 0.05)',
+        glass: 'var(--shadow-glass)',
+        'glass-sm': 'var(--shadow-glass-sm)',
+        glow: '0 0 20px rgb(var(--glow-teal) / 0.15), 0 0 40px rgb(var(--glow-purple) / 0.1)',
+        'glow-sm': '0 0 12px rgb(var(--glow-teal) / 0.15)',
+        'glow-lg': '0 0 30px rgb(var(--glow-purple) / 0.2), 0 0 60px rgb(var(--glow-teal) / 0.1)',
+        'glow-violet': '0 0 30px rgb(var(--glow-violet) / 0.25)',
+        neon: '0 0 4px rgb(var(--glow-teal) / 0.4), 0 0 16px rgb(var(--glow-teal) / 0.2), inset 0 0 8px rgb(var(--glow-teal) / 0.05)',
         'neon-purple':
-          '0 0 5px rgb(var(--glow-purple) / 0.5), 0 0 24px rgb(var(--glow-purple) / 0.25)',
+          '0 0 4px rgb(var(--glow-purple) / 0.4), 0 0 16px rgb(var(--glow-purple) / 0.2)',
       },
       transitionTimingFunction: {
         'out-expo': 'var(--ease-out-expo)',

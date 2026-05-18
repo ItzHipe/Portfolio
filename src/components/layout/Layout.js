@@ -1,6 +1,7 @@
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import BackgroundEffects from '@/components/layout/BackgroundEffects'
+import MouseGlow from '@/components/layout/MouseGlow'
 
 export default function Layout({ children }) {
   return (

@@ -1,28 +1,26 @@
 export const siteConfig = {
   name: 'Jay Patil',
   initials: 'JP',
-  title: 'Jay Patil | Frontend Engineer · AI & IoT Systems',
+  title: 'Jay Patil | Freelance React & Next.js Developer',
   description:
-    'Frontend engineer from Pune building AI crop analysis, IoT farming systems, and modern React products. B.Tech CSE @ PCU. Open to internships and junior roles.',
+    'Jay Patil — freelance full-stack developer in Pune. Building fast React and Next.js web apps for startups and businesses. Available for remote projects.',
   ogDescription:
-    'Portfolio of Jay Patil — FarmLens, CropSense, interactive React engineering, and full-stack AI/IoT work.',
+    'Jay Patil builds fast, polished web apps with React and Next.js. Available for freelance projects and remote collaborations.',
   url: 'https://hipe.dev',
   author: 'Jay Patil',
   email: 'hipe.dev@gmail.com',
   location: 'Pune, Maharashtra',
   locale: 'en_IN',
   keywords:
-    'Jay Patil, frontend engineer, React developer, Next.js, AI developer Pune, IoT developer, FarmLens, CropSense',
+    'freelance React developer India, Next.js developer Pune, full stack developer freelance, hire React developer, web app developer'
 }
 
 export const navLinks = [
-  { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Experience', href: '#experience' },
+  { label: 'Work', href: '#projects' },
   { label: 'Skills', href: '#skills' },
   { label: 'Contact', href: '#contact' },
-]
+];
 
 export const navLinksExtended = [
   ...navLinks,

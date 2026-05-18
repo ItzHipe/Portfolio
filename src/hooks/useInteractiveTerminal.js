@@ -40,8 +40,8 @@ export function useInteractiveTerminal({
     setReadyAnnounced(true)
     setEntries([
       lineEntry({
-        text: 'Interactive mode enabled. Type help or try: project farmlens',
-        lineType: 'success',
+        text: 'Type help to explore.',
+        lineType: 'output',
         prefix: '›',
       }),
     ])

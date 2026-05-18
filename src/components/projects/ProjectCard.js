@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m as motion } from 'framer-motion'
 import { cn } from '@/lib/cn'
 import { SPRING } from '@/lib/motion'
 import { useCardTilt } from '@/hooks/useCardTilt'
@@ -30,10 +30,10 @@ export default function ProjectCard({
         'card-premium group relative flex h-full w-full flex-col p-px',
         featured && 'border-accent-purple/12'
       )}
-      whileHover={canTilt ? undefined : { y: -2 }}
-      transition={SPRING.card}
+      whileHover={canTilt ? undefined : { y: -2, scale: 1.005 }}
+      transition={SPRING.cinematic}
     >
-      <div className="pointer-events-none absolute inset-0 card-inner bg-gradient-to-br from-accent-cyan/[0.03] via-transparent to-accent-purple/[0.05] opacity-0 transition-opacity duration-base group-hover:opacity-100" />
+      <div className="pointer-events-none absolute inset-0 card-inner bg-gradient-to-br from-accent-cyan/[0.04] via-transparent to-accent-purple/[0.06] opacity-0 transition-opacity duration-slow ease-out-expo group-hover:opacity-100" />
 
       <div className="card-inner relative flex h-full flex-col overflow-hidden bg-void/55">
         {thumbnail && (

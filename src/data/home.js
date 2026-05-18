@@ -1,31 +1,24 @@
 export const heroContent = {
   name: 'Jay Patil',
   roles: [
-  'Modern Web Developer',
-  'Full Stack Engineer',
-  'Freelancer'
+    'React & Next.js Developer',
+    'Full-Stack Web Apps',
+    'AI-Integrated Products'
   ],
-  headline: 'Creating performant products for modern businesses.',
-  bio: 'Clean design, responsive interfaces, and smart systems for modern products. Open to internships and junior roles. Based in Pune — comfortable with remote work.',
+  headline: 'I build web products that work.',
+  bio: 'Fast, polished React and Next.js apps for startups and businesses. From idea to live product — clean code, real results.',
   profileImage: '/images/profile/developer-pic-1.png',
   profileFallback: 'JP',
   ctas: [
     {
       id: 'projects',
-      label: 'View projects',
+      label: 'See My Work',
       href: '#projects',
       variant: 'primary',
     },
     {
-      id: 'resume',
-      label: 'Resume',
-      href: '/resume.pdf',
-      variant: 'resume',
-      download: true,
-    },
-    {
       id: 'contact',
-      label: 'Contact Me',
+      label: 'Work With Me',
       href: '#contact',
       variant: 'contact',
     },

@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { motion, useReducedMotion } from 'framer-motion'
+import { m as motion, useReducedMotion } from 'framer-motion'
 import { cn } from '@/lib/cn'
 import { SPRING, VIEWPORT } from '@/lib/motion'
 import ProjectStatus from '@/components/projects/ProjectStatus'
@@ -74,14 +74,17 @@ function FlagshipShowcaseInner() {
 
   return (
     <motion.article
-      className="group relative overflow-hidden rounded-[1.75rem] border border-accent-cyan/15 bg-elevated/25 p-px shadow-glow-lg"
-      initial={{ opacity: 0, y: 28 }}
+      className="group relative overflow-hidden rounded-[1.75rem] border border-accent-cyan/15 bg-elevated/25 p-px shadow-glow-lg transition-transform duration-slow ease-out-expo hover:-translate-y-1"
+      initial={{ opacity: 0, y: 8 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={VIEWPORT}
       transition={SPRING.gentle}
       aria-labelledby="flagship-project-title"
     >
-      <div className="pointer-events-none absolute -left-24 top-0 h-64 w-64 rounded-full bg-accent-cyan/10 blur-[80px]" />
+      <div 
+        className="pointer-events-none absolute -left-24 top-0 h-64 w-64 rounded-full" 
+        style={{ background: 'radial-gradient(circle, rgb(var(--color-cyan) / 0.1) 0%, transparent 70%)' }}
+      />
 
       <div className="relative rounded-[calc(1.75rem-1px)] bg-void/80 p-6 sm:p-8 lg:p-9">
         <header className="mb-7 flex flex-col gap-5 sm:mb-8 lg:flex-row lg:items-start lg:justify-between lg:gap-8">

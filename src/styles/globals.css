@@ -26,7 +26,7 @@
   }
 
   body {
-    @apply min-h-screen overflow-x-clip bg-void font-sans text-base text-foreground transition-colors duration-base;
+    @apply min-h-screen overflow-x-clip bg-void font-sans text-base text-foreground transition-colors duration-300 ease-out;
     font-feature-settings: 'kern' 1, 'liga' 1;
   }
 
@@ -52,7 +52,7 @@
   }
 
   p {
-    @apply leading-relaxed;
+    @apply leading-relaxed tracking-tight;
   }
 
   a {
@@ -132,14 +132,27 @@
   /* ─── Glassmorphism ────────────────────────────────────────────────── */
   .glass {
     @apply border border-border/10 shadow-glass-sm;
-    -webkit-backdrop-filter: blur(12px) saturate(150%);
-    backdrop-filter: blur(12px) saturate(150%);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
     background-color: rgb(var(--glass-bg) / var(--glass-opacity));
   }
 
   .glass-strong {
-    @apply border border-border/15 shadow-glass backdrop-blur-lg;
-    background-color: rgb(var(--glass-bg) / calc(var(--glass-opacity) * 1.75));
+    @apply border border-border/15 shadow-glass;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    background-color: rgb(var(--glass-bg) / calc(var(--glass-opacity) * 1.5));
+  }
+
+  @media (min-width: 640px) {
+    .glass {
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+    }
+    .glass-strong {
+      -webkit-backdrop-filter: blur(16px);
+      backdrop-filter: blur(16px);
+    }
   }
 
   .glass-card {
@@ -180,7 +193,7 @@
   }
 
   .card-premium {
-    @apply relative overflow-hidden border border-border/10 bg-elevated/35 shadow-glass-sm backdrop-blur-md;
+    @apply relative overflow-hidden border border-border/10 bg-elevated/40 shadow-glass-sm backdrop-blur-lg;
     border-radius: var(--radius-card-lg);
     @apply transition-[box-shadow,border-color,transform] duration-base ease-out-expo;
   }
@@ -205,7 +218,7 @@
 
   /* ─── Buttons ────────────────────────────────────────────────────── */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-base focus-ring disabled:pointer-events-none disabled:opacity-50;
+    @apply inline-flex items-center justify-center gap-2 rounded-full font-medium transition-[transform,box-shadow,opacity,background-color,color] duration-slow ease-out-expo focus-ring disabled:pointer-events-none disabled:opacity-50;
   }
 
   .btn-sm {
@@ -226,7 +239,7 @@
 
   @media (hover: hover) {
     .btn-primary:hover {
-      @apply shadow-glow-lg brightness-110;
+      @apply shadow-glow-lg brightness-110 scale-[1.02];
     }
   }
 
@@ -235,19 +248,19 @@
   }
 
   .btn-tactile {
-    @apply relative overflow-hidden transition-transform duration-fast ease-out-expo active:scale-[0.97];
+    @apply relative overflow-hidden transition-transform duration-base ease-out-expo active:scale-[0.98] hover:scale-[1.01];
   }
 
   .btn-secondary {
-    @apply btn-md glass border-border/20 text-foreground hover:border-border-glow/40 hover:brightness-110;
+    @apply btn-md glass border-border/20 text-foreground hover:border-border-glow/40 hover:brightness-110 hover:-translate-y-0.5;
   }
 
   .btn-ghost {
-    @apply btn-md text-muted hover:text-accent;
+    @apply btn-md text-muted hover:text-accent hover:bg-foreground/5;
   }
 
   .btn-outline {
-    @apply btn-md border border-border-glow/30 bg-transparent text-foreground hover:bg-accent/10 hover:shadow-glow-sm;
+    @apply btn-md border border-border-glow/30 bg-transparent text-foreground hover:bg-accent/10 hover:shadow-glow-sm hover:-translate-y-0.5;
   }
 
   /* ─── Backgrounds ────────────────────────────────────────────────── */
@@ -266,12 +279,13 @@
 
   .hero-glow {
     @apply pointer-events-none absolute inset-0 bg-gradient-hero;
+    opacity: 0.6; /* Softer glow globally */
   }
 
   .hero-glow-pulse {
     @apply hero-glow;
-    opacity: 0.85;
-    animation: glowPulse 8s ease-in-out infinite;
+    opacity: 0.7;
+    animation: glowPulse 10s ease-in-out infinite;
   }
 
   .hero-ambient {
@@ -279,7 +293,7 @@
   }
 
   .hero-ambient-orb {
-    @apply absolute rounded-full blur-[72px];
+    @apply absolute rounded-full;
     opacity: var(--glow-opacity);
   }
 
@@ -327,21 +341,11 @@
   /* ─── Custom Scrollbar ─────────────────────────────────────── */
   /* WebKit browsers */
   *::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-  *::-webkit-scrollbar-track {
-    background: rgb(var(--color-void));
-  }
-  *::-webkit-scrollbar-thumb {
-    background-color: rgb(var(--color-primary));
-    border-radius: 4px;
-    border: 2px solid rgb(var(--color-void));
+    display: none;
   }
   /* Firefox */
   * {
-    scrollbar-width: thin;
-    scrollbar-color: rgb(var(--color-primary)) rgb(var(--color-void));
+    scrollbar-width: none;
   }
   /* Reduce heavy transitions for smoother UI */
   .glass, .glass-strong, .glass-card, .glass-card-hover {
@@ -372,6 +376,7 @@
     }
   }
 
+  /* ─── Miscellaneous ─── */
   .terminal-project-card {
     @apply border-accent-cyan/10 shadow-glow;
   }

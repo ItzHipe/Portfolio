@@ -1,9 +1,11 @@
-import { MotionConfig as FramerMotionConfig } from 'framer-motion'
+import { LazyMotion, domAnimation, MotionConfig as FramerMotionConfig } from 'framer-motion'
 
 export default function MotionConfig({ children }) {
   return (
-    <FramerMotionConfig reducedMotion="user">
-      {children}
-    </FramerMotionConfig>
+    <LazyMotion features={domAnimation}>
+      <FramerMotionConfig reducedMotion="user">
+        {children}
+      </FramerMotionConfig>
+    </LazyMotion>
   )
 }

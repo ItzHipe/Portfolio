@@ -1,17 +1,18 @@
+import { memo } from 'react'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/cn'
 import TerminalCursor from '@/components/terminal/TerminalCursor'
 
 const typeStyles = {
-  system: 'text-accent-cyan/90',
-  command: 'text-foreground/90',
-  output: 'text-muted',
-  success: 'text-accent-teal',
-  banner: 'font-semibold text-accent-purple/90 tracking-[0.2em]',
+  system: 'text-muted/60',
+  command: 'text-foreground/80',
+  output: 'text-muted/80',
+  success: 'text-accent-cyan/80',
+  banner: 'font-normal text-muted/70 tracking-[0.1em]',
 }
 
-export default function TerminalLine({
-  prefix = '>',
+function TerminalLine({
+  prefix = '›',
   text,
   type = 'system',
   isActive,
@@ -24,9 +25,9 @@ export default function TerminalLine({
   const Wrapper = animate ? motion.div : 'div'
   const motionProps = animate
     ? {
-        initial: { opacity: 0, x: -4 },
-        animate: { opacity: 1, x: 0 },
-        transition: { duration: 0.22, ease: [0.16, 1, 0.3, 1] },
+        initial: { opacity: 0, y: 6 },
+        animate: { opacity: 1, y: 0 },
+        transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
       }
     : {}
 
@@ -34,7 +35,7 @@ export default function TerminalLine({
     <Wrapper
       {...motionProps}
       className={cn(
-        'font-mono text-[13px] leading-[1.65] sm:text-sm md:text-[15px]',
+        'font-mono text-[12.5px] leading-[1.8] sm:text-[13.5px]',
         typeStyles[type] ?? typeStyles.system,
         isWelcome && 'text-glow text-accent-cyan',
         className
@@ -50,3 +51,5 @@ export default function TerminalLine({
     </Wrapper>
   )
 }
+
+export default memo(TerminalLine)

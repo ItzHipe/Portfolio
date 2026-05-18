@@ -8,11 +8,11 @@ export default function TerminalCursor({ className, visible = true }) {
     <motion.span
       aria-hidden
       className={cn(
-        'ml-0.5 inline-block h-[1.1em] w-[0.55em] translate-y-[0.1em] rounded-[1px] bg-accent-cyan shadow-[0_0_8px_rgb(var(--glow-teal)/0.9)]',
+        'ml-[2px] inline-block h-[1.15em] w-[0.55em] translate-y-[0.1em] rounded-[2px] bg-accent-cyan shadow-[0_0_10px_rgb(var(--glow-teal)/0.6)]',
         className
       )}
-      animate={{ opacity: [1, 1, 0, 0] }}
-      transition={{ duration: 1, repeat: Infinity, times: [0, 0.49, 0.5, 1] }}
+      animate={{ opacity: [0.3, 1, 0.3] }}
+      transition={{ duration: 1.2, ease: 'easeInOut', repeat: Infinity }}
     />
   )
 }

@@ -29,7 +29,7 @@ export const flagshipProject = {
   status: 'Active',
   featured: true,
   links: {
-    github: 'https://github.com',
+    github: null,
     demo: null,
   },
   prediction: {
@@ -56,7 +56,7 @@ export const projects = [
     status: 'Competition',
     featured: true,
     size: 'large',
-    links: { github: 'https://github.com', demo: null },
+    links: { github: 'https://github.com/ItzHipe/CropSense', demo: null },
     thumbnail: {
       gradient: 'from-accent-teal/25 via-elevated to-accent-cyan/15',
       label: 'CropSense',
@@ -77,30 +77,32 @@ export const projects = [
     status: 'Live',
     featured: false,
     size: 'default',
-    links: { github: 'https://github.com', demo: null },
+    links: { github: 'https://github.com/ItzHipe/Portfolio', demo: null },
     thumbnail: {
       gradient: 'from-accent-purple/20 via-elevated to-accent-cyan/10',
       label: 'Portfolio',
     },
   },
   {
-    id: 'ai-experiments',
-    title: 'Automation & AI Experiments',
-    category: 'Prototypes · Tooling',
+    id: 'raftaar',
+    title: 'Raftaar',
+    category: 'Frontend Development',
+    image: '/images/projects/raftaar.png',
     description:
-      'Smaller builds: scripting automation, frontend spikes, API sketches, and ML experiments that inform larger projects like FarmLens and CropSense.',
+      'Built and refined the company website in React and JavaScript. Implemented responsive layouts, collaborated on UI details with the team, and improved how the site behaves on desktop and mobile.',
     highlights: [
-      'Rapid API and UI prototypes',
-      'Automation scripts and developer tooling trials',
+      'Responsive React layouts',
+      'Team UI collaboration',
+      'Desktop & mobile optimization',
     ],
-    tags: ['Python', 'JavaScript', 'Docker', 'Git'],
-    status: 'Ongoing',
+    tags: ['React', 'JavaScript', 'Frontend', 'Tailwind CSS'],
+    status: 'Completed',
     featured: false,
     size: 'default',
-    links: { github: 'https://github.com', demo: null },
+    links: { github: 'https://github.com/ItzHipe/Raftaar', demo: 'https://raftaar.win' },
     thumbnail: {
-      gradient: 'from-primary/15 via-elevated to-void',
-      label: 'Experiments',
+      gradient: 'from-accent-cyan/20 via-elevated to-primary/10',
+      label: 'Raftaar',
     },
   },
 ]

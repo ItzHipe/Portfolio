@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useMotionValue, useSpring, useTransform, useReducedMotion } from 'framer-motion'
 
-const MAX_TILT = 6
+const MAX_TILT = 3 // Even more subtle for premium feel
 
 /**
  * Subtle pointer-based 3D tilt — desktop + fine pointer only.
@@ -25,12 +25,14 @@ export function useCardTilt(enabled = true) {
   const y = useMotionValue(0)
 
   const rotateX = useSpring(useTransform(y, [-0.5, 0.5], [MAX_TILT, -MAX_TILT]), {
-    stiffness: 220,
-    damping: 28,
+    stiffness: 140,
+    damping: 30,
+    mass: 1, // Cinematic spring mass
   })
   const rotateY = useSpring(useTransform(x, [-0.5, 0.5], [-MAX_TILT, MAX_TILT]), {
-    stiffness: 220,
-    damping: 28,
+    stiffness: 140,
+    damping: 30,
+    mass: 1,
   })
 
   const handleMove = (e) => {

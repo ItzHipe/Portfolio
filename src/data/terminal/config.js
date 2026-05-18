@@ -11,19 +11,12 @@ export const TERMINAL_COMMANDS = [
   'help',
   'whoami',
   'about',
-  'skills',
-  'stack',
   'projects',
-  'project',
-  'experience',
-  'achievements',
   'contact',
   'resume',
   'github',
   'linkedin',
   'clear',
-  'theme',
-  'ask',
 ]
 
-export const PROJECT_ALIASES = ['farmlens', 'cropsense', 'experiments', 'portfolio']
+export const PROJECT_ALIASES = ['farmlens', 'cropsense', 'raftaar', 'portfolio']

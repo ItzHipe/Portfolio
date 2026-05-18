@@ -41,15 +41,15 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        'fixed inset-x-0 top-0 z-50 h-14 border-b transition-[border-color,background-color] duration-300 ease-out md:h-16',
+        'fixed inset-x-0 top-0 z-50 h-14 border-b transition-all duration-slow ease-out-expo md:h-16',
         scrolled
-          ? 'bg-void/75 backdrop-blur-xl'
-          : 'border-transparent bg-void/70 backdrop-blur-sm'
+          ? 'bg-void/75 backdrop-blur-xl border-border/10 shadow-glass-sm'
+          : 'border-transparent bg-void/30 backdrop-blur-md'
       )}
     >
-      <div className="section-container flex h-full items-center justify-between gap-3 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:items-center lg:gap-4">
+      <div className="section-container flex h-full items-center justify-between gap-3 lg:gap-4">
         <nav
-          className="hidden min-w-0 items-center lg:flex"
+          className="hidden min-w-0 items-center gap-2 lg:flex"
           aria-label="Main navigation"
         >
           {navLinks.map((link) => (
@@ -63,19 +63,15 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <div className="flex flex-1 justify-center lg:col-start-2 lg:flex-none">
-          {/* Removed JP icon as requested */}
-        </div>
-
         <div className="flex shrink-0 items-center justify-end gap-3 lg:col-start-3">
           <a 
             href="https://hipe.dev/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center rounded-full border border-border/60 bg-white/5 px-4 py-2 text-sm font-medium text-foreground transition-all duration-300 hover:border-primary/40 hover:bg-white/10 hover:text-white"
-            >
+            className="hidden sm:inline-flex items-center rounded-full border border-border/20 glass px-4 py-1.5 text-sm font-medium text-foreground transition-all duration-300 hover:border-accent-cyan/50 hover:text-accent-cyan hover:shadow-glow-sm"
+          >
             Resume
-            </a>
+          </a>
           <ul className="hidden items-center gap-1 sm:flex">
             {socialLinks.map(({ name, href, icon }) => {
               const Icon = iconMap[icon]

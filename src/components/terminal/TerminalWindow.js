@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m as motion } from 'framer-motion'
 import { cn } from '@/lib/cn'
 
 function WindowControl({ color, label }) {
@@ -20,10 +20,10 @@ export default function TerminalWindow({ title, children, className }) {
         'terminal-window-reflection',
         className
       )}
-      initial={{ opacity: 0, y: 32, scale: 0.98 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      initial={{ opacity: 0, y: 8 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
-      transition={{ type: 'spring', stiffness: 100, damping: 24, mass: 0.9 }}
+      transition={{ type: 'spring', stiffness: 70, damping: 25, mass: 1.2 }}
     >
       <div
         aria-hidden

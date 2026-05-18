@@ -53,7 +53,7 @@ export const projectsList = [
   { id: 'farmlens', name: 'FarmLens', status: 'Active', cmd: 'project farmlens' },
   { id: 'cropsense', name: 'CropSense', status: 'IoT', cmd: 'project cropsense' },
   { id: 'portfolio', name: 'Portfolio', status: 'Live', cmd: 'project portfolio' },
-  { id: 'experiments', name: 'AI Experiments', status: 'Lab', cmd: 'project experiments' },
+  { id: 'raftaar', name: 'Raftaar', status: 'Live', cmd: 'project raftaar' },
 ]
 
 export const experienceTimeline = [

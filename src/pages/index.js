@@ -10,10 +10,6 @@ const TerminalSection = dynamic(
   { loading: () => <SectionPlaceholder height="min(72vh, 520px)" /> }
 )
 
-const ExperienceSection = dynamic(
-  () => import('@/components/about/ExperienceSection'),
-  { loading: () => <SectionPlaceholder /> }
-)
 
 const AchievementsSection = dynamic(
   () => import('@/components/about/AchievementsSection'),
@@ -68,7 +64,7 @@ export default function HomePage() {
         <Hero />
         <AboutSection />
         <ProjectsSection />
-        <ExperienceSection />
+
         <AchievementsSection />
         <SkillsSection />
         <TerminalSection />
