@@ -12,7 +12,7 @@ function HelpOutput({ groups }) {
       {groups.map((group) => (
         <div key={group.title}>
           <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wider text-accent-cyan/80">
-            // {group.title}
+          {'// '}{group.title}
           </p>
           <ul className="space-y-1.5 pl-4 border-l border-border/15">
             {group.cmds.map((cmd) => (
