@@ -24,8 +24,6 @@ export const navLinks = [
 
 export const navLinksExtended = [
   ...navLinks,
-  { href: '#skills', label: 'Skills' },
-  { href: '#contact', label: 'Contact' },
 ]
 
 export const socialLinks = [

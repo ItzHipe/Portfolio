@@ -1,7 +1,6 @@
 import TerminalBackground from '@/components/terminal/TerminalBackground'
-import TerminalWindow from '@/components/terminal/TerminalWindow'
 import InteractiveTerminal from '@/components/terminal/InteractiveTerminal'
-import { terminalConfig } from '@/data/terminal'
+import MobileBentoBox from '@/components/terminal/MobileBentoBox'
 
 export default function TerminalSection() {
   return (
@@ -13,7 +12,10 @@ export default function TerminalSection() {
       <TerminalBackground />
 
       <div className="section-container relative z-10 max-w-4xl">
-        <InteractiveTerminal />
+        <div className="hidden md:block">
+          <InteractiveTerminal />
+        </div>
+        <MobileBentoBox />
       </div>
     </section>
   )

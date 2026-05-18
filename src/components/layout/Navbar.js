@@ -41,7 +41,7 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        'fixed inset-x-0 top-0 z-50 h-14 border-b transition-all duration-slow ease-out-expo md:h-16',
+        'hidden lg:block fixed inset-x-0 top-0 z-50 h-14 border-b transition-all duration-slow ease-out-expo md:h-16',
         scrolled
           ? 'bg-void/75 backdrop-blur-xl border-border/10 shadow-glass-sm'
           : 'border-transparent bg-void/30 backdrop-blur-md'
@@ -63,7 +63,7 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <div className="flex shrink-0 items-center justify-end gap-3 lg:col-start-3">
+        <div className="flex shrink-0 items-center justify-end gap-3 ml-auto">
           <a 
             href="https://hipe.dev/resume.pdf"
             target="_blank"
@@ -97,7 +97,7 @@ export default function Navbar() {
           <button
             type="button"
             className={cn(
-              'focus-ring touch-target flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-full lg:hidden',
+              'focus-ring touch-target relative z-[60] flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-full lg:hidden',
               menuOpen && 'text-foreground'
             )}
             onClick={() => setMenuOpen((open) => !open)}
@@ -107,8 +107,8 @@ export default function Navbar() {
           >
             <span
               className={cn(
-                'h-px w-5 bg-current transition-transform duration-300 ease-out',
-                menuOpen && 'translate-y-[5px] rotate-45'
+                'h-px w-5 bg-current transition-transform duration-300 ease-out origin-center',
+                menuOpen && 'translate-y-[7px] rotate-45'
               )}
             />
             <span
@@ -119,8 +119,8 @@ export default function Navbar() {
             />
             <span
               className={cn(
-                'h-px w-5 bg-current transition-transform duration-300 ease-out',
-                menuOpen && '-translate-y-[5px] -rotate-45'
+                'h-px w-5 bg-current transition-transform duration-300 ease-out origin-center',
+                menuOpen && '-translate-y-[7px] -rotate-45'
               )}
             />
           </button>

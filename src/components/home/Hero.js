@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-[100dvh] flex-col justify-center overflow-x-clip bg-void pb-20 pt-[5.25rem] sm:pb-24 md:pt-28 lg:min-h-screen lg:pb-28"
+      className="relative flex min-h-[100dvh] flex-col justify-center overflow-x-clip bg-void pb-20 pt-8 sm:pt-12 sm:pb-24 md:pt-28 lg:min-h-screen lg:pb-28"
       aria-labelledby="hero-heading"
     >
       <HeroAmbient />

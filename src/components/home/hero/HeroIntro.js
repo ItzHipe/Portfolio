@@ -8,6 +8,7 @@ export default function HeroIntro({ content }) {
       className="flex flex-col justify-center py-6 sm:py-8 lg:py-10 lg:pl-2 xl:pl-6"
       stagger={0.15}
       delayChildren={0.1}
+      disableOnMobile
     >
       <StaggerItem>
         <div className="font-mono text-xs text-muted sm:text-sm">

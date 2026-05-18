@@ -5,13 +5,29 @@ import {
   staggerItemAlt,
   VIEWPORT,
 } from '@/lib/motion'
+import { useEffect, useState } from 'react'
 
 export function StaggerContainer({
   children,
   className,
   stagger = 0.085,
   delayChildren = 0.05,
+  disableOnMobile = false,
 }) {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 639px)')
+    const onChange = () => setIsMobile(mq.matches)
+    onChange()
+    mq.addEventListener?.('change', onChange)
+    return () => mq.removeEventListener?.('change', onChange)
+  }, [])
+
+  if (disableOnMobile && isMobile) {
+    return <div className={className}>{children}</div>
+  }
+
   return (
     <motion.div
       className={className}
